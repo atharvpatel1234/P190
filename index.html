@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Runner Game</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+        <script src="./Movement.js"></script>
+    </head>
+
+    <body>
+        <a-scene position="20 80 -10">
+            
+
+                 <a-assets>
+                    <a-asset-item id="runner" src="./assets/sports_guy/scene.gltf"></a-asset-item>
+                    <a-asset-item id="road" src="./assets/road_free/scene.gltf"></a-asset-item>
+                </a-assets>
+
+                <a-entity id="environment" environment="preset:forest; skyType:gradient; lighting:point"></a-entity>
+                <a-entity id="bg"  look-controls="pointerLockEnabled:false"  movement-controls="speed:0.5; constrainToNavMesh:true;" camera position="0 2 23" player-movement></a-entity>
+            <a-entity id="man-running" gltf-model="#runner" position="0 1.2 22" rotation="10 180 0" >
+                
+            </a-entity>
+            <a-entity id="road-background" gltf-model="#road" position="-2.841 -48.849 9.77" scale="2 2 2" rotation="10 90 0"></a-entity>
+        </a-scene>
+    </body>
+</html>
